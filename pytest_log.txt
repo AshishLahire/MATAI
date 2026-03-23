@@ -1,0 +1,20 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.12, pytest-9.0.2, pluggy-1.6.0 -- C:\Users\sknee\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\sknee\Downloads\Maths_Mentor-n\MATAI
+plugins: anyio-4.12.1, langsmith-0.6.9
+collecting ... collected 2 items
+
+test_agents.py::test_agent_graph_simple_math PASSED                      [ 50%]
+test_agents.py::test_agent_graph_ambiguous_math FAILED                   [100%]
+
+================================== FAILURES ===================================
+_______________________ test_agent_graph_ambiguous_math _______________________
+test_agents.py:38: in test_agent_graph_ambiguous_math
+    assert final_state.get("needs_hitl", False) == True
+E   AssertionError: assert False == True
+E    +  where False = <built-in method get of dict object at 0x000001EEF562C1C0>('needs_hitl', False)
+E    +    where <built-in method get of dict object at 0x000001EEF562C1C0> = {'agent_trace': ['Parser: Extracted 2 variables. Ambiguous: False', 'Router: Classified as algebra.', 'Solver: Generated solution with explicit final answer.', 'Verifier: Checked solution. Confidence: High. Correct: True', 'Explainer: Formatted tutorial for student.'], 'confidence_level': 'High', 'explanation': '## Step 1: Introduction to the Problem\nWe were given a simple linear equation $x + 3 = y$, and our goal was to solve for the variable $x$ in terms of $y$.\n\n## Step 2: Step-by-Step Solution\nTo solve the equation $x + 3 = y$, we followed these steps:\n\n\\begin{align*}\n&\\text{Given equation: } x + 3 = y \\\\\n&\\text{Subtract 3 from both sides: } x + 3 - 3 = y - 3 \\\\\n&\\text{Simplify: } x = y - 3\n\\end{align*}\n\n## Step 3: Final Answer and Verification\nThe final answer to the equation is $x = y - 3$. This solution has been verified to correctly isolate the variable $x$ by subtracting $3$ from both sides of the equation, resulting in a simplified and correct expression for $x$ in terms of $y$.\n\n## Step 4: Key Takeaway\nThe key concept here is the use of inverse operations to isolate variables in linear equations. By applying the inverse operation of addition (which is subtraction) to both sides of the equation, we were able to solve for $x$.\n\n**Friendly Summary:**\nTo solve the equation $x + 3 = y$ for $x$, we subtracted $3$ from both sides of the equation. This results in the simplified expression $x = y - 3$, which correctly solves for $x$ in terms of $y$.\n\n**The Step-by-Step Solution:**\n\\begin{align*}\nx + 3 &= y \\\\\nx + 3 - 3 &= y - 3 \\\\\nx &= y - 3\n\\end{align*}\n\n**Key Takeaway/Concept:**\nWhen solving linear equations, using inverse operations (such as subtraction to undo addition) is crucial for isolating the variable. This method ensures that the equation remains balanced and allows us to find the value of the variable in terms of other variables or constants.', 'input_text': 'Solve x?+*3=y what', ...}.get
+=========================== short test summary info ===========================
+FAILED test_agents.py::test_agent_graph_ambiguous_math - AssertionError: asse...
+======================== 1 failed, 1 passed in 34.57s =========================
