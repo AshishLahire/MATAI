@@ -2,6 +2,11 @@
 
 An end-to-end AI application for solving JEE-style math problems using a Multi-Agent system, RAG, and Human-in-the-Loop (HITL).
 
+
+# How to Access
+Frontend: http://localhost:8501
+Backend Docs: http://localhost:8000/docs
+
 ## Features
 - **Multimodal Input**: Text, Image (OCR), and Audio (ASR).
 - **Multi-Agent Architecture**: 5 specialized agents (Parser, Router, Solver, Verifier, Explainer).
